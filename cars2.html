@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+     <meta charset="UTF-8">
+     <title> Inicio </title>
+         <style>
+             /* Elimina todos los bordes externos y huecos blancos del navegador */
+             html, body {
+                 margin: 0;
+                 padding: 0;
+                 width: 100%;
+                 min-height: 100vh;
+                  background-color: #e72705;
+                 font-family: sans-serif;
+                 display: flex;
+                 flex-direction: column;
+             }
+
+
+
+
+             /* Cabecera de lado a lado */
+             header {
+                 display: flex;
+                 justify-content: space-between;
+                 align-items: center;
+                 background-color: rgb(240, 167, 140);
+                 padding: 15px 30px; /* Más espacio a los lados */
+                 box-sizing: border-box;
+             }
+
+
+
+
+             .logo-pequeno {
+                 width: 50px;
+                 height: auto;
+                 display: block;
+             }
+
+
+
+
+             .barra-navegacion {
+                 display: flex;
+                 gap: 15px;
+                 margin-top: 10px;
+             }
+
+
+
+
+             .boton-nav {
+                 text-decoration: none;
+                 color: khaki;
+                 background-color: crimson;
+                 padding: 8px 16px;
+                 border-radius: 4px;
+                 font-size: 14px;
+                 transition: background-color 0.3s;
+             }
+
+
+
+
+             .boton-nav:hover {
+                  background-color: brown(245,148,1);
+                 color: azure;
+             }
+
+
+
+
+             .boton-nav.activo {
+                 background-color: darkred;
+                 color: goldenrod;
+                 font-weight: bold;
+             }
+
+
+
+
+             /* Contenedor principal que se estira al ancho completo */
+             main {
+                 display: flex;
+                 gap: 30px;
+                 padding: 30px;
+                 box-sizing: border-box;
+                 flex: 1; /* Empuja el footer hacia abajo si hay poco contenido */
+                 width: 100%;
+             }
+
+
+
+
+             /* Columna del anuncio */
+             aside {
+                 width: 25%;
+                 display: flex;
+                 justify-content: center;
+                 align-items: flex-start;
+             }
+
+
+
+
+             aside img {
+                 width: 100%; /* El anuncio se adapta a su columna */
+                 max-width: 350px;
+                 height: auto;
+                 display: block;
+                 border-radius: 4px;
+             }
+
+
+
+
+             /* Columna de la información */
+             section {
+                 width: 75%;
+                 display: flex;
+                 flex-direction: column;
+             }
+
+
+
+
+             article {
+                 width: 100%;
+                 background-color: darkred; /* Un fondo sutil para leer mejor el texto */
+                 padding: 25px;
+                 border-radius: 6px;
+                 box-sizing: border-box;
+             }
+
+
+
+
+             article img {
+                 max-width: 100%;
+                 height: auto;
+                 display: block;
+                 margin-bottom: 20px;
+                 border-radius: 4px;
+             }
+
+
+
+
+             /* Pie de página de lado a lado */
+             footer {
+                 background-color: khaki;
+                 text-align: center;
+                 padding: 15px;
+                 width: 100%;
+                 box-sizing: border-box;
+             }
+
+
+
+
+             footer p {
+                 margin: 0;
+                 font-size: 14px;
+             }
+         </style>
+    </head>  
+    <body>
+        <header>
+            <div>
+                <h1 style="margin:0;">Mi sitio web</h1>
+                <nav class="barra-navegacion">
+                    <a href="index.html" class="boton-nav ">cars 1</a>
+                    <a href="santy2.html" class="boton-nav activo">cars 2</a>
+                    <a href="santy3.html" class="boton-nav">cars 3</a>
+                </nav>
+            </div>
+            <img src="imagenes/kachow.gif" alt="logo de mi sitio web" title="logo de la marca" class="logo-pequeno">
+        </header>
+
+
+
+
+        <main>
+            <aside>
+                <img src="imagenes/images (5).jpg" alt="anuncios">
+            </aside>
+            <section>
+                <article>
+                    <img src="imagenes/images (4).jpg" alt="foto">
+                    <h1>cars 2</h1>
+                    <p>**Cars 2** es una película animada de Disney y Pixar, estrenada en **2011**. La historia sigue a **Rayo McQueen**, un famoso auto de carreras, y a su mejor amigo **Mate**, quienes viajan por diferentes países para participar en el **Grand Prix Mundial**, una competencia en la que se enfrentan corredores de todo el mundo.
+
+
+Durante el viaje, Mate es confundido con un espía importante y termina involucrado en una misión secreta junto con unos agentes. Mientras Rayo participa en las carreras, Mate intenta ayudar en la misión y descubre información sobre un plan que puede poner en peligro a muchas personas.
+
+
+La película tiene muchas escenas de **carreras, acción, aventuras y momentos divertidos**. También muestra la importancia de la **amistad, la confianza y ayudar a los demás**. Al final, Rayo y Mate demuestran que, aunque son muy diferentes, pueden trabajar juntos y superar los problemas.
+</p>
+                    <ul>
+                       
+                </article>
+            </section>
+        </main>
+
+
+
+
+        <footer>
+            <p></p>
+        </footer>
+    </body>
+</html>

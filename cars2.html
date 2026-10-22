@@ -1,213 +1,281 @@
 <!DOCTYPE html>
 <html lang="es">
-   <head>
-     <meta charset="UTF-8">
-     <title> Inicio </title>
-         <style>
-             /* Elimina todos los bordes externos y huecos blancos del navegador */
-             html, body {
-                 margin: 0;
-                 padding: 0;
-                 width: 100%;
-                 min-height: 100vh;
-                  background-color: #e72705;
-                 font-family: sans-serif;
-                 display: flex;
-                 flex-direction: column;
-             }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars 2 - Universo Cars</title>
 
+    <style>
+        * { box-sizing: border-box; }
 
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #171717;
+            color: white;
+        }
 
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px 35px;
+            background: linear-gradient(135deg, #a90000, #ef2929);
+            border-bottom: 5px solid #ffd21c;
+        }
 
-             /* Cabecera de lado a lado */
-             header {
-                 display: flex;
-                 justify-content: space-between;
-                 align-items: center;
-                 background-color: rgb(240, 167, 140);
-                 padding: 15px 30px; /* Más espacio a los lados */
-                 box-sizing: border-box;
-             }
+        .titulo {
+            margin: 0;
+            font-size: 32px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 3px #580000;
+        }
 
+        .subtitulo {
+            color: #fff1a8;
+            margin: 8px 0;
+        }
 
+        .barra-navegacion {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
 
+        .boton-nav {
+            text-decoration: none;
+            color: white;
+            background: #222;
+            border: 2px solid #ffd21c;
+            border-radius: 6px;
+            padding: 11px 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-             .logo-pequeno {
-                 width: 50px;
-                 height: auto;
-                 display: block;
-             }
+        .boton-nav:hover,
+        .boton-nav.activo {
+            background: #ffd21c;
+            color: #171717;
+        }
 
+        .logo {
+            width: 100px;
+            height: 80px;
+            object-fit: contain;
+        }
 
+        .portada {
+            min-height: 330px;
+            padding: 45px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(#0009, #000b),
+                url("imagenes/cars2.jpg") center/cover no-repeat;
+            border-bottom: 4px solid #ffd21c;
+        }
 
+        .portada h2 {
+            color: #ffd21c;
+            font-size: 46px;
+            margin: 0 0 12px;
+            text-shadow: 3px 3px 5px black;
+        }
 
-             .barra-navegacion {
-                 display: flex;
-                 gap: 15px;
-                 margin-top: 10px;
-             }
+        .portada p {
+            max-width: 750px;
+            line-height: 1.8;
+            font-size: 17px;
+        }
 
+        main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 30px 20px;
+        }
 
+        article {
+            background: #292929;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #e72727;
+        }
 
+        article h2 {
+            color: #ffd21c;
+            margin-top: 0;
+        }
 
-             .boton-nav {
-                 text-decoration: none;
-                 color: khaki;
-                 background-color: crimson;
-                 padding: 8px 16px;
-                 border-radius: 4px;
-                 font-size: 14px;
-                 transition: background-color 0.3s;
-             }
+        article p, li {
+            line-height: 1.8;
+        }
 
+        .imagen-principal {
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
 
+        .personajes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+        }
 
+        .tarjeta {
+            background: #1b1b1b;
+            border: 1px solid #555;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
 
-             .boton-nav:hover {
-                  background-color: brown(245,148,1);
-                 color: azure;
-             }
+        .tarjeta h3 {
+            color: #ffd21c;
+        }
 
+        footer {
+            background: #a90000;
+            border-top: 4px solid #ffd21c;
+            text-align: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
 
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+                padding: 20px 12px;
+            }
 
+            .barra-navegacion {
+                justify-content: center;
+            }
 
-             .boton-nav.activo {
-                 background-color: darkred;
-                 color: goldenrod;
-                 font-weight: bold;
-             }
+            .portada h2 { font-size: 34px; }
+        }
+    </style>
+</head>
 
+<body>
 
+<header>
+    <div>
+        <h1 class="titulo">🏁 Universo Cars</h1>
+        <p class="subtitulo">Descubre las aventuras de Rayo McQueen</p>
 
+        <nav class="barra-navegacion">
+            <a href="index.html" class="boton-nav">☰ Menú</a>
+            <a href="cars1.html" class="boton-nav">Cars 1</a>
+            <a href="cars2.html" class="boton-nav activo">Cars 2</a>
+            <a href="cars3.html" class="boton-nav">Cars 3</a>
+        </nav>
+    </div>
 
-             /* Contenedor principal que se estira al ancho completo */
-             main {
-                 display: flex;
-                 gap: 30px;
-                 padding: 30px;
-                 box-sizing: border-box;
-                 flex: 1; /* Empuja el footer hacia abajo si hay poco contenido */
-                 width: 100%;
-             }
+    <img src="imagenes/lightning-mcqueen.webp" alt="Rayo McQueen" class="logo">
+</header>
 
+<section class="portada">
+    <h2>Cars 2 (2011)</h2>
+    <p>
+        Carreras internacionales, espías y una gran aventura.
+        Rayo McQueen y Mate viajan por el mundo y se enfrentan
+        a situaciones que pondrán a prueba su amistad.
+    </p>
+</section>
 
+<main>
 
+    <article>
+        <h2>Sinopsis</h2>
 
-             /* Columna del anuncio */
-             aside {
-                 width: 25%;
-                 display: flex;
-                 justify-content: center;
-                 align-items: flex-start;
-             }
+        <img src="imagenes/cars2.jpg" alt="Cars 2 segunda película" class="imagen-principal">
 
+        <p>
+            En esta aventura, Rayo McQueen participa en el Grand Prix Mundial,
+            una competición que reúne a algunos de los mejores automóviles
+            de carreras del planeta.
+        </p>
 
+        <p>
+            Mate acompaña a Rayo, pero termina involucrado en una misión
+            de espionaje internacional. Junto a los agentes Finn McMissile
+            y Holley Shiftwell, intenta descubrir qué hay detrás de un
+            misterioso plan que amenaza a los participantes de las carreras.
+        </p>
 
+        <p>
+            Mientras recorren diferentes países, ambos amigos descubren
+            la importancia de confiar el uno en el otro y aceptar sus
+            diferencias.
+        </p>
+    </article>
 
-             aside img {
-                 width: 100%; /* El anuncio se adapta a su columna */
-                 max-width: 350px;
-                 height: auto;
-                 display: block;
-                 border-radius: 4px;
-             }
+    <article>
+        <h2>Personajes principales</h2>
 
-
-
-
-             /* Columna de la información */
-             section {
-                 width: 75%;
-                 display: flex;
-                 flex-direction: column;
-             }
-
-
-
-
-             article {
-                 width: 100%;
-                 background-color: darkred; /* Un fondo sutil para leer mejor el texto */
-                 padding: 25px;
-                 border-radius: 6px;
-                 box-sizing: border-box;
-             }
-
-
-
-
-             article img {
-                 max-width: 100%;
-                 height: auto;
-                 display: block;
-                 margin-bottom: 20px;
-                 border-radius: 4px;
-             }
-
-
-
-
-             /* Pie de página de lado a lado */
-             footer {
-                 background-color: khaki;
-                 text-align: center;
-                 padding: 15px;
-                 width: 100%;
-                 box-sizing: border-box;
-             }
-
-
-
-
-             footer p {
-                 margin: 0;
-                 font-size: 14px;
-             }
-         </style>
-    </head>  
-    <body>
-        <header>
-            <div>
-                <h1 style="margin:0;">Mi sitio web</h1>
-                <nav class="barra-navegacion">
-                    <a href="index.html" class="boton-nav ">cars 1</a>
-                    <a href="santy2.html" class="boton-nav activo">cars 2</a>
-                    <a href="santy3.html" class="boton-nav">cars 3</a>
-                </nav>
+        <div class="personajes">
+            <div class="tarjeta">
+                <h3>Rayo McQueen</h3>
+                <p>El corredor número 95 que compite en el Grand Prix Mundial.</p>
             </div>
-            <img src="imagenes/kachow.gif" alt="logo de mi sitio web" title="logo de la marca" class="logo-pequeno">
-        </header>
 
+            <div class="tarjeta">
+                <h3>Mate</h3>
+                <p>La grúa que termina convertida en protagonista de una misión secreta.</p>
+            </div>
 
+            <div class="tarjeta">
+                <h3>Finn McMissile</h3>
+                <p>Un agente secreto experimentado que investiga una conspiración.</p>
+            </div>
 
+            <div class="tarjeta">
+                <h3>Holley Shiftwell</h3>
+                <p>Una agente inteligente que colabora con Mate durante la misión.</p>
+            </div>
+        </div>
+    </article>
 
-        <main>
-            <aside>
-                <img src="imagenes/images (5).jpg" alt="anuncios">
-            </aside>
-            <section>
-                <article>
-                    <img src="imagenes/images (4).jpg" alt="foto">
-                    <h1>cars 2</h1>
-                    <p>**Cars 2** es una película animada de Disney y Pixar, estrenada en **2011**. La historia sigue a **Rayo McQueen**, un famoso auto de carreras, y a su mejor amigo **Mate**, quienes viajan por diferentes países para participar en el **Grand Prix Mundial**, una competencia en la que se enfrentan corredores de todo el mundo.
+    <article>
+        <h2>Datos de la película</h2>
+        <ul>
+            <li><strong>Año de estreno:</strong> 2011.</li>
+            <li><strong>Estudio:</strong> Pixar Animation Studios.</li>
+            <li><strong>Género:</strong> Animación, comedia, acción y aventura.</li>
+            <li><strong>Competencia:</strong> Grand Prix Mundial.</li>
+            <li><strong>Temas principales:</strong> Amistad, confianza y trabajo en equipo.</li>
+        </ul>
+    </article>
 
+    <article>
+        <h2>¿Qué nos enseña Cars 2?</h2>
+        <p>
+            La película muestra que debemos valorar a nuestros amigos
+            por quienes son, confiar en ellos y reconocer que cada persona
+            tiene habilidades diferentes que pueden ayudar a superar
+            grandes desafíos.
+        </p>
+    </article>
 
-Durante el viaje, Mate es confundido con un espía importante y termina involucrado en una misión secreta junto con unos agentes. Mientras Rayo participa en las carreras, Mate intenta ayudar en la misión y descubre información sobre un plan que puede poner en peligro a muchas personas.
+</main>
 
+<footer>
+    <strong>Universo Cars | Cars 2</strong>
+    <p>Página informativa dedicada a la segunda película de la saga.</p>
+</footer>
 
-La película tiene muchas escenas de **carreras, acción, aventuras y momentos divertidos**. También muestra la importancia de la **amistad, la confianza y ayudar a los demás**. Al final, Rayo y Mate demuestran que, aunque son muy diferentes, pueden trabajar juntos y superar los problemas.
-</p>
-                    <ul>
-                       
-                </article>
-            </section>
-        </main>
-
-
-
-
-        <footer>
-            <p></p>
-        </footer>
-    </body>
+</body>
 </html>

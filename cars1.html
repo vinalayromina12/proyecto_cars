@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars 1 - Universo Cars</title>
+
+    <style>
+        * { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #171717;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px 35px;
+            background: linear-gradient(135deg, #a90000, #ef2929);
+            border-bottom: 5px solid #ffd21c;
+        }
+
+        .titulo {
+            margin: 0;
+            font-size: 32px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 3px #580000;
+        }
+
+        .subtitulo {
+            color: #fff1a8;
+            margin: 8px 0;
+        }
+
+        .barra-navegacion {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .boton-nav {
+            text-decoration: none;
+            color: white;
+            background: #222;
+            border: 2px solid #ffd21c;
+            border-radius: 6px;
+            padding: 11px 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .boton-nav:hover,
+        .boton-nav.activo {
+            background: #ffd21c;
+            color: #171717;
+        }
+
+        .logo {
+            width: 100px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .portada {
+            min-height: 330px;
+            padding: 45px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(#0009, #000b),
+                url("imagenes/images.jpg") center/cover no-repeat;
+            border-bottom: 4px solid #ffd21c;
+        }
+
+        .portada h2 {
+            color: #ffd21c;
+            font-size: 46px;
+            margin: 0 0 12px;
+            text-shadow: 3px 3px 5px black;
+        }
+
+        .portada p {
+            max-width: 750px;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        article {
+            background: #292929;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #e72727;
+        }
+
+        article h2 {
+            color: #ffd21c;
+            margin-top: 0;
+        }
+
+        article p, li {
+            line-height: 1.8;
+        }
+
+        .imagen-principal {
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .personajes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+        }
+
+        .tarjeta {
+            background: #1b1b1b;
+            border: 1px solid #555;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .tarjeta h3 {
+            color: #ffd21c;
+        }
+
+        footer {
+            background: #a90000;
+            border-top: 4px solid #ffd21c;
+            text-align: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+                padding: 20px 12px;
+            }
+
+            .barra-navegacion {
+                justify-content: center;
+            }
+
+            .portada h2 { font-size: 34px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div>
+        <h1 class="titulo">🏁 Universo Cars</h1>
+        <p class="subtitulo">Descubre las aventuras de Rayo McQueen</p>
+
+        <nav class="barra-navegacion">
+            <a href="index.html" class="boton-nav">☰ Menú</a>
+            <a href="cars1.html" class="boton-nav activo">Cars 1</a>
+            <a href="cars2.html" class="boton-nav">Cars 2</a>
+            <a href="cars3.html" class="boton-nav">Cars 3</a>
+        </nav>
+    </div>
+
+    <img src="imagenes/lightning-mcqueen.webp" alt="Rayo McQueen" class="logo">
+</header>
+
+<section class="portada">
+    <h2>Cars (2006)</h2>
+    <p>
+        Una historia de carreras, amistad y aprendizaje.
+        Acompaña a Rayo McQueen en su inesperada aventura
+        en el pequeño pueblo de Radiador Springs.
+    </p>
+</section>
+
+<main>
+
+    <article>
+        <h2>Sinopsis</h2>
+
+        <img src="imagenes/images.jpg" alt="Cars primera película" class="imagen-principal">
+
+        <p>
+            Rayo McQueen es un joven automóvil de carreras que sueña con
+            ganar la Copa Pistón. Durante un viaje hacia la competencia,
+            termina perdido en Radiador Springs, un pequeño pueblo situado
+            en la Ruta 66.
+        </p>
+
+        <p>
+            Allí conoce a Mate, Sally, Doc Hudson y otros habitantes.
+            Después de causar algunos problemas, debe ayudar a reparar
+            las calles del pueblo. Durante su estancia descubre que existen
+            cosas más importantes que la fama y la victoria.
+        </p>
+
+        <p>
+            Finalmente, Rayo comprende el valor de la amistad, la humildad
+            y el apoyo a los demás.
+        </p>
+    </article>
+
+    <article>
+        <h2>Personajes principales</h2>
+
+        <div class="personajes">
+            <div class="tarjeta">
+                <h3>Rayo McQueen</h3>
+                <p>El auto de carreras número 95 que quiere convertirse en campeón.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Mate</h3>
+                <p>Una grúa simpática, divertida y fiel amiga de Rayo.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Sally</h3>
+                <p>Un Porsche que aprecia Radiador Springs y ayuda a Rayo a cambiar.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Doc Hudson</h3>
+                <p>Un veterano que comparte su experiencia y enseña a Rayo.</p>
+            </div>
+        </div>
+    </article>
+
+    <article>
+        <h2>Datos de la película</h2>
+        <ul>
+            <li><strong>Año de estreno:</strong> 2006.</li>
+            <li><strong>Estudio:</strong> Pixar Animation Studios.</li>
+            <li><strong>Género:</strong> Animación, comedia y aventura.</li>
+            <li><strong>Escenario destacado:</strong> Radiador Springs.</li>
+            <li><strong>Valores:</strong> Amistad, humildad y perseverancia.</li>
+        </ul>
+    </article>
+
+    <article>
+        <h2>¿Qué nos enseña Cars 1?</h2>
+        <p>
+            Nos enseña que ganar no lo es todo. La amistad, la honestidad,
+            el respeto y la disposición para ayudar a los demás son valores
+            que pueden cambiar nuestra forma de ver el mundo.
+        </p>
+    </article>
+
+</main>
+
+<footer>
+    <strong>Universo Cars | Cars 1</strong>
+    <p>Página informativa dedicada a la primera película de la saga.</p>
+</footer>
+
+</body>
+</html>
